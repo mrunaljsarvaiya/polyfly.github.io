@@ -167,13 +167,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Quadrotors equipped with cable-suspended loads represent a versatile, low-cost, and energy efficient solution for aerial transportation, construction, and manipulation tasks.
-            However, their real-world deployment is hindered by several challenges. The system is difficult to control because it is nonlinear, underactuated, involves hybrid dynamics due to slack-taut cable modes, and evolves on complex configuration spaces. Additionally, it is crucial to estimate the full state and the cable's mode transitions in real-time using on-board sensors and computation. 
-            </p>
-            <p>
-            To address these challenges, we present a novel Hybrid Perception-Aware Nonlinear Model Predictive Control (HPA-MPC) control approach for quadrotors with suspended loads. Our method considers the complete hybrid system dynamics and includes a perception-aware cost to ensure the payload remains visible in the robot's camera during navigation. Furthermore, the full state and hybrid dynamics' transitions are estimated using onboard sensors.
-            Experimental results demonstrate that our approach enables stable load tracking control, even during slack-taut transitions, and operates entirely onboard. The experiments also show that the perception-aware term effectively keeps the payload in the robot's camera field of view when a human operator interacts with the load. 
-          
+            Aerial transportation robots using suspended cables have emerged as versatile platforms for disaster response and rescue operations. 
+            To maximize the capabilities of these systems, robots need to aggressively fly through tightly constrained environments, such as dense forests and structurally unsafe buildings, while minimizing flight time and avoiding obstacles. 
+            Existing methods geometrically over-approximate the vehicle and obstacles, leading to conservative maneuvers and increased flight times. 
+          </p>
+          <p>
+            We eliminate these restrictions by proposing PolyFly, an optimal global planner which considers a non-conservative representation for aerial transportation by modeling each physical component of the environment, and the robot (quadrotor, cable and payload), as independent polytopes. 
+            We further increase the model accuracy by incorporating the attitude of the physical components by constructing orientation-aware polytopes. 
+            The resulting optimal control problem is efficiently solved by converting the polytope constraints into smooth differentiable constraints via duality theory. 
+            We compare our method against the existing state-of-the-art approach in eight maze-like environments and show that PolyFly produces faster trajectories in each scenario. 
+            We also experimentally validate our proposed approach on a real quadrotor with a suspended payload, demonstrating the practical reliability and accuracy of our method.
+
           </p>
         </div>
       </div>
